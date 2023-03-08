@@ -1,0 +1,68 @@
+<ng-container *ngIf="products.length != 0">
+  <div class="container">
+    <div class="card-table">
+      <div class="cart-product">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Sr. No</th>
+              <th>Product Name</th>
+              <th>Product Image</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ item.title }}</td>
+              <td>
+                <img
+                  style="width: 120px"
+                  [src]="item.image"
+                  [alt]="item.title"
+                />
+              </td>
+              <td style="width: 25%;">{{ item.description }}</td>
+              <td style="width: 12%;">{{ item.price }}</td>
+              <td style="width: 12%;">{{ item.quantity }}</td>
+              <td style="width: 12%;">{{ item.total }}</td>
+              <td>
+                <button (click)="removeItem(item)" class="btn btn-danger">
+                  <i class="las la-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4"></td>
+              <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
+              <td><button routerLink="/products" class="btn btn-primary">Shop More</button></td>
+              <td><button class="btn btn-success">Checkout</button></td>
+              <td><span class="fw-bold">Total Panier : </span> ${{grandTotal}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="products.length == 0">
+  <div class="container">
+    <div class="card">
+      <h4 class="card-title">My Cart</h4>
+    </div>
+    <div class="center">
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/005/006/007/non_2x/no-item-in-the-shopping-cart-click-to-go-shopping-now-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-vector.jpg"
+        alt="cartEmpty"
+      />
+      <h4>Your cart is empty !</h4>
+      <h6>add item ton it now</h6>
+      <button routerLink="/products" class="btn btn-primary">Shop Now</button>
+    </div>
+  </div>
+</ng-container>

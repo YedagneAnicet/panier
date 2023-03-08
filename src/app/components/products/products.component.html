@@ -1,0 +1,49 @@
+<div class="cart-top container-fluid">
+  <div class="container d-flex">
+    <div class="item">
+      <a>
+        <img
+          src="https://www.finncrisp.com/449a61/siteassets/search/smaller/all-products-s.png"
+          alt="all product"
+        />
+        <h5>All products</h5>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img
+          src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-103264,resizemode-1,msid-74327481/industry/cons-products/electronics/electronic-goods-set-to-get-expensive-amid-short-supplies-from-virus-hit-china.jpg"
+          alt="Electronics"
+        />
+        <h5>Electronics</h5>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img src="https://images.crowdspring.com/blog/wp-content/uploads/2018/05/27131148/pexels-photo-291762.jpeg" alt="Fashion">
+        <h5>Fashion</h5>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img src="https://m.media-amazon.com/images/I/81lgipL8zmL._UL1500_.jpg" alt="jewllery">
+        <h5>jewllery</h5>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let item of productList">
+      <div class="card col-md-3">
+        <img [src]="item.image" [alt]="item.title">
+        <h4 class="item-card">{{item.title}}</h4>
+        <p class="item-card">{{item.description}}</p>
+        <p> <span class="fw-bold">Price : </span> ${{item.price}}</p>
+        <button class="btn btn-primary" (click)="addtocart(item)">Add to cart</button>
+      </div>
+    </ng-container>
+  </div>
+</div>

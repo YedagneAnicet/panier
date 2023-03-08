@@ -1,0 +1,50 @@
+.cart-top {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+}
+
+.item {
+  margin: 5px 20px;
+  text-align: center;
+}
+
+.item img {
+  width: 100px;
+  height: 100px;
+}
+
+.item a:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.card {
+  padding: 20px;
+  margin: 40px;
+}
+
+.item-card {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100ch;
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 15px;
+  transition: 0.3s ease-in-out;
+}
+
+.card img:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+}

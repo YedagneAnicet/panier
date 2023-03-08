@@ -1,0 +1,16 @@
+<header>
+  <div class="navbar navbar-dark bg-primary shadow-sm">
+    <div class="navbar-brand align-item-center d-flex">
+      <i class="las la-shipping-fast icon">&nbsp;</i>
+      <span class="titre">Flipkart</span>
+      <div class="form-group">
+        <input type="text" placeholder="search products" class="form-control" />
+      </div>
+      <span class="las la-search search-icon"></span>
+    </div>
+    <button routerLink="cart" class="btn btn-primary">
+      <i class="las la-cart-plus icon"></i>
+      <div class="badge bg-danger">{{totalItem}}</div>
+    </button>
+  </div>
+</header>
